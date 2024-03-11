@@ -4,8 +4,8 @@ body {
 }
 
 #board {
-  width: 400px;
-  height: 400px;
+  width: 323px;
+  height: 325px;
   border: 2px solid purple;
 
   margin: 0 auto;
@@ -21,7 +21,7 @@ body {
 
 
 #pieces {
-  width: 1040px;
+  width: 645px;
   height: 160px;
   border: 2px solid purple;
 
