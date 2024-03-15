@@ -9,23 +9,20 @@ var turns = 0;
 window.onload = function() {
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns; c++) {
-            //<img>
             let tile = document.createElement("img");
-            tile.src = "./images1/blank.jpg";
+            tile.src = "./images2/blank.jpg";
 
-            //DRAG FUNCTIONALITY
-            tile.addEventListener("dragstart", dragStart); //click on image to drag
-            tile.addEventListener("dragover", dragOver);   //drag an image
-            tile.addEventListener("dragenter", dragEnter); //dragging an image into another one
-            tile.addEventListener("dragleave", dragLeave); //dragging an image away from another one
-            tile.addEventListener("drop", dragDrop);       //drop an image onto another one
-            tile.addEventListener("dragend", dragEnd);      //after you completed dragDrop
+            tile.addEventListener("dragstart", dragStart);
+            tile.addEventListener("dragover", dragOver);
+            tile.addEventListener("dragenter", dragEnter);
+            tile.addEventListener("dragleave", dragLeave);
+            tile.addEventListener("drop", dragDrop);
+            tile.addEventListener("dragend", dragEnd);
 
             document.getElementById("board").append(tile);
         }
     }
 
-    //pieces
     let pieces = [];
     for (let i=1; i <= rows*columns; i++) {
         pieces.push(i.toString());
@@ -34,7 +31,6 @@ window.onload = function() {
     for (let i =0; i < pieces.length; i++) {
         let j = Math.floor(Math.random() * pieces.length);
 
-        //swap
         let tmp = pieces[i];
         pieces[i] = pieces[j];
         pieces[j] = tmp;
@@ -44,19 +40,17 @@ window.onload = function() {
         let tile = document.createElement("img");
         tile.src = "./images1/" + pieces[i] + ".jpg";
 
-        //DRAG FUNCTIONALITY
-        tile.addEventListener("dragstart", dragStart); //click on image to drag
-        tile.addEventListener("dragover", dragOver);   //drag an image
-        tile.addEventListener("dragenter", dragEnter); //dragging an image into another one
-        tile.addEventListener("dragleave", dragLeave); //dragging an image away from another one
-        tile.addEventListener("drop", dragDrop);       //drop an image onto another one
-        tile.addEventListener("dragend", dragEnd);      //after you completed dragDrop
+        tile.addEventListener("dragstart", dragStart);
+        tile.addEventListener("dragover", dragOver);
+        tile.addEventListener("dragenter", dragEnter);
+        tile.addEventListener("dragleave", dragLeave);
+        tile.addEventListener("drop", dragDrop);
+        tile.addEventListener("dragend", dragEnd);
 
         document.getElementById("pieces").append(tile);
     }
 }
 
-//DRAG TILES
 function dragStart() {
     currTile = this;
 }
